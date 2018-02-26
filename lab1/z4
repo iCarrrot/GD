@@ -1,0 +1,13 @@
+SELECT ?birthCityLabel (COUNT(DISTINCT(?person)) as ?count)
+WHERE
+{
+  ?person  wdt:P19 ?birthCity;
+           wdt:P106 ?occ.
+  ?occ wdt:P279 wd:Q901.
+  ?birthCity wdt:P17  wd:Q36.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
+Group by ?birthCityLabel
+ORDER BY DESC(?count)
+Limit 10

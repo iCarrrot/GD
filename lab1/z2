@@ -1,0 +1,10 @@
+SELECT ?person ?personLabel
+WHERE
+{
+  ?person  wdt:P19 wd:Q1799.
+  ?person  wdt:P166 ?nobel.
+  wd:Q7191 wdt:P527 ?nobel.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
+  ORDER BY ASC(?stateLabel)

@@ -1,0 +1,11 @@
+SELECT ?stateLabel ?mottoLabel
+WHERE
+{
+  wd:Q30 wdt:P150 ?state.
+  OPTIONAL {?state wdt:P1451 ?motto.}
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE]". }
+
+}
+  ORDER BY ASC(?stateLabel)
+  sls
+  
