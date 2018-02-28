@@ -4,12 +4,7 @@ WHERE
   ?person  wdt:P19 ?birthCity;
            wdt:P20 ?deathPlace.
   ?birthCity wdt:P17  wd:Q36.
-  ?deathPlace wdt:P2044 ?high.
-  #wdt:P2044 wdt:P2237 wd:Q11573.
-  #?deathPlace wdt:P2237 ?info.
-  #?high wdt:P2370 ?meterHigh.
-  #?person  wdt:P166 ?nobel.
-  #wd:Q7191 wdt:P527 ?nobel.
+  ?deathPlace p:P2044/psn:P2044/wikibase:quantityAmount ?high.
   FILTER(?high > 8000)
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
 
