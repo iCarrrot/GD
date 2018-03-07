@@ -1,0 +1,9 @@
+#z1
+SELECT ?place ?placeLabel ?personLabel 
+WHERE
+{
+  ?place wdt:P138 ?person.
+  ?person wdt:P39 wd:Q1054799.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "pl". }
+
+}

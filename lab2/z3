@@ -1,0 +1,8 @@
+#z3
+SELECT ?person ?personLabel
+WHERE {
+  ?person wdt:P39 wd:Q19546.
+  Optional{?person wdt:P40 ?child.}
+  filter(BOUND(?child) = false)
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "pl". }
+}

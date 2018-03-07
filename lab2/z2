@@ -1,0 +1,8 @@
+#z2
+SELECT ?person ?personLabel ?childLabel WHERE {
+  ?person wdt:P39 wd:Q19546.
+  ?person wdt:P40 ?child.
+  ?child wdt:P39 wd:Q19546.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "pl". }
+}
+LIMIT 20
