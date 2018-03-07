@@ -1,5 +1,6 @@
 #z3TODO
-SELECT ?personLabel ?birthCityLabel ?nationalityLabel WHERE {
+SELECT ?nationalityLabel (COUNT(DISTINCT(?person)) as ?count) 
+WHERE {
   #jest politykiem
   ?person wdt:P106 wd:Q82955.
   #urodzony w polsce
@@ -10,8 +11,10 @@ SELECT ?personLabel ?birthCityLabel ?nationalityLabel WHERE {
   FILTER(LANG(?personLabel) = "pl")
   #nie ma obywatelstwa polskiego
   ?person wdt:P27 ?nationality.
-  filter(?nationality != wd:q36)
+  filter(?nationality != wd:Q36)
   
   SERVICE wikibase:label { bd:serviceParam wikibase:language "pl". }
 }
-LIMIT 20
+group by ?nationalityLabel
+
+ORDER BY DESC(?count)
