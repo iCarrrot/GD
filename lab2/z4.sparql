@@ -1,4 +1,4 @@
-#z3TODO
+#z4
 SELECT ?nationalityLabel (COUNT(DISTINCT(?person)) as ?count) 
 WHERE {
   #jest politykiem
