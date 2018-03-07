@@ -1,3 +1,4 @@
+#z1
 SELECT ?stateLabel ?mottoLabel
 WHERE
 {
@@ -7,5 +8,5 @@ WHERE
 
 }
   ORDER BY ASC(?stateLabel)
-  sls
+  
   
