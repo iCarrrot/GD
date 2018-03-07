@@ -1,0 +1,17 @@
+#z3TODO
+SELECT ?personLabel ?birthCityLabel ?nationalityLabel WHERE {
+  #jest politykiem
+  ?person wdt:P106 wd:Q82955.
+  #urodzony w polsce
+  ?person wdt:P19 ?birthCity.
+  ?birthCity wdt:P17 wd:Q36.
+  #ma label po polsku
+  ?person rdfs:label ?personLabel.
+  FILTER(LANG(?personLabel) = "pl")
+  #nie ma obywatelstwa polskiego
+  ?person wdt:P27 ?nationality.
+  filter(?nationality != wd:q36)
+  
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "pl". }
+}
+LIMIT 20
