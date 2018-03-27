@@ -1,3 +1,5 @@
+//9
+
 match (t:Troll)-[:POSTED]->(tweet:Tweet)-[:HAS_TAG]->(tag:Hashtag) where t.partition is not null
 with t.partition as group, tag.tag as htag, count(tweet) as counter
 order by counter desc 
